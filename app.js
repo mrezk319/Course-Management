@@ -13,16 +13,17 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Welcome to Course Management Api!" });
 });
-app.use("/api/courses", courseRouter);
 mongoose.set("bufferCommands", false)
 mongoose
   .connect(process.env.DATABASE)
   .then((val) => {
+    app.use("/api/courses", courseRouter);
     console.log("DataBase Connected");
   })
   .catch((err) => {
     console.error("DB connection error:", err.message);
   });
+
 app.listen(process.env.PORT, () => {
   console.log("Server Worked..");
 });
