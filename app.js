@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const courseRouter = require("./Routes/courseRoutes");
 const app = express();
 const dotenv = require("dotenv");
