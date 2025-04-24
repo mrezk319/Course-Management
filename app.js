@@ -15,6 +15,7 @@ app.listen(process.env.PORT, () => {
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Welcome to Course Management Api!" });
 });
+mongoose.set("bufferCommands", false);
 async () => await mongoose.connect(process.env.DATABASE);
 console.log("DataBase Connected");
 app.use("/api/courses", courseRouter);
