@@ -17,13 +17,12 @@ mongoose.set("bufferCommands", false)
 mongoose
   .connect(process.env.DATABASE)
   .then((val) => {
-    app.use("/api/courses", courseRouter);
     console.log("DataBase Connected");
   })
   .catch((err) => {
     console.error("DB connection error:", err.message);
   });
-
+  app.use("/api/courses", courseRouter);
 app.listen(process.env.PORT, () => {
   console.log("Server Worked..");
 });
