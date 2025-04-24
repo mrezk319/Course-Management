@@ -15,21 +15,17 @@ app.get("/", (req, res) => {
 });
 app.use("/api/courses", courseRouter);
 
-let isConnected = false;
-
-const dbWork = async () => {
-  if (isConnected) return;
-
-  try {
-    await mongoose.connect(process.env.DATABASE);
-    isConnected = true;
-    console.log("✅ MongoDB Connected");
-  } catch (err) {
+mongoose
+  .connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then((val) => {
+    console.log("DataBase Connected");
+  })
+  .catch((err) => {
     console.error("DB connection error:", err.message);
-  }
-};
-dbWork();
-
+  });
 app.listen(process.env.PORT, () => {
   console.log("Server Worked..");
 });
