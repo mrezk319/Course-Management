@@ -20,5 +20,6 @@ mongoose
   .catch((err) => {
     console.error("DB connection error:", err.message);
   });
-
-module.exports = app;
+app.listen(process.env.PORT, () => {
+  console.log("Server Worked..");
+});
