@@ -13,7 +13,7 @@
     }
   ],
   "env": {
-    "DATABASE": "mongodb+srv://mrezk319:476IHWkUNMOJAgrG@cluster0.eawt42f.mongodb.net/CourseManagement?retryWrites=true&w=majority&appName=Cluster0",
+    "DATABASE": "mongodb+srv://mrezk319:b3fA7J7oC30jBwUk@cluster0.eawt42f.mongodb.net/CourseManagement?retryWrites=true&w=majority&appName=Cluster0",
     "PORT": "3000"
   }
 }
