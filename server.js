@@ -11,6 +11,4 @@ mongoose
   .catch((err) => {
     console.error("DB connection error:", err.message);
   });
-app.listen(process.env.PORT, () =>
-  console.log(`Course Management app listening on port ${process.env.PORT}!`)
-);
+  module.exports = app; 
