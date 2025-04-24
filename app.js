@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "Welcome to Course Management Api!" });
 });
 app.use("/api/courses", courseRouter);
-
+mongoose.set("bufferCommands", false)
 mongoose
   .connect(process.env.DATABASE)
   .then((val) => {
