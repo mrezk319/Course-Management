@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/courses",
+      "dest": "/api/courses.js"
+    },
+    {
+      "src": "/api/courses/(.*)",
+      "dest": "/api/courses/[id].js"
+    }
+  ],
+  "env": {
+    "DATABASE_URL": "mongodb+srv://mrezk319:476IHWkUNMOJAgrG@cluster0.eawt42f.mongodb.net/CourseManagement?retryWrites=true&w=majority&appName=Cluster0",
+    "PORT": "3000"
+  }
+}
