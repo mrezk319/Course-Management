@@ -18,11 +18,12 @@ mongoose
   .connect(process.env.DATABASE)
   .then((val) => {
     console.log("DataBase Connected");
+    app.use("/api/courses", courseRouter);
+    app.listen(process.env.PORT, () => {
+      console.log("Server Worked..");
+    });
   })
   .catch((err) => {
     console.error("DB connection error:", err.message);
   });
-  app.use("/api/courses", courseRouter);
-app.listen(process.env.PORT, () => {
-  console.log("Server Worked..");
-});
+
