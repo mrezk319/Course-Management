@@ -16,10 +16,7 @@ app.get("/", (req, res) => {
 app.use("/api/courses", courseRouter);
 
 mongoose
-  .connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.DATABASE)
   .then((val) => {
     console.log("DataBase Connected");
   })
